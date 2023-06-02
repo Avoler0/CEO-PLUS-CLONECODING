@@ -1,0 +1,25 @@
+body{
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 돋움, Dotum, sans-serif;
+  font-size: 0px;
+}
+
+*,::after,::before {
+  box-sizing: border-box;
+}
+
+ul, li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 돋움, Dotum, sans-serif;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+

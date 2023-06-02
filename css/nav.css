@@ -1,0 +1,110 @@
+#mainnav {
+  display:flex;
+  width: 100%;
+  font-family: inherit;
+}
+
+#mainnav .navbar{
+  display:flex;
+  justify-content: space-between;
+  @media (min-width: 1140px) {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+#mainnav .navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 2.3vw;
+  width: 100px;
+}
+
+#mainnav .navbar-left {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+#mainnav .navbar-left .gnb {
+  display: flex;
+}
+#mainnav .navbar-left .gnb a{
+  display: block;
+  padding: 18px 15px;
+}
+#mainnav .navbar-left .gnb li a span{
+  display: block;
+  text-align: center;
+  white-space: pre-line;
+}
+
+#mainnav .navbar-left .gnb .nav-title-en{
+  font-size: 16px;
+  font-weight: 700;
+}
+#mainnav .navbar-left .gnb .nav-title-kr {
+  padding-top: 4px;
+  font-size: 12px;
+  color: #999;
+}
+
+#mainnav .navbar-right{
+  display: flex;
+  align-items: center;
+  z-index: -2;
+}
+
+#mainnav .navbar-right li{
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#mainnav .navbar-right div {
+  width: 100%;
+  height: 100%;
+}
+
+#mainnav .navbar-right button {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  
+}
+
+#mainnav .navbar-right .nav-item.search{
+  margin-right: .5rem;
+}
+
+#mainnav .navbar-right .nav-icon{
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#mainnav .navbar-right .nav-icon.search {
+  background-size: 20px;
+}
+
+#mainnav .navbar-right li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#mainnav .navbar-right .nav-link .nav-icon{
+  text-align: center;
+  line-height: 37px;
+}
+
+
+
+
+
+
+
+
