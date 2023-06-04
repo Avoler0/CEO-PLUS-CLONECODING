@@ -30,36 +30,36 @@ function navInit(){
 
   function navLeftItems() {
     const leftUl = document.createElement('ul')
-    leftUl.className = 'gnb'
+    leftUl.id = 'gnb'
     const itemEn = ['My News','Promotion','Reference Check','Partner Ship','Talk','Lounge','Pulse Survey','Magazine','Top20'];
     const itemKr = ['내 소식 쓰기', '신상품홍보하기','인재레퍼런스체크/추천','협력업체추천받기','익명게시판','프리미엄 소통공간','투표','뉴스/인터뷰','인기글']
     const list = itemEn.map((en,index)=>{
-      const itemLi = document.createElement("li");
-      const aTag = document.createElement('a');
-      const enSpan = document.createElement('span');
-      const krSpan = document.createElement('span');
+    const itemLi = document.createElement("li");
+    const aTag = document.createElement('a');
+    const enSpan = document.createElement('span');
+    const krSpan = document.createElement('span');
 
-      
-      itemLi.className = index;
-      enSpan.className = 'nav-title-en'
-      enSpan.innerHTML = en;
-      krSpan.className = 'nav-title-kr'
-      krSpan.innerHTML = itemKr[index];
+    
+    itemLi.className = index;
+    enSpan.className = 'nav-title-en'
+    enSpan.innerHTML = en;
+    krSpan.className = 'nav-title-kr'
+    krSpan.innerHTML = itemKr[index];
 
-      aTag.appendChild(enSpan);
-      aTag.appendChild(krSpan);
+    aTag.appendChild(enSpan);
+    aTag.appendChild(krSpan);
 
-      itemLi.appendChild(aTag);
+    itemLi.appendChild(aTag);
 
-      return itemLi;
-    })
+    return itemLi;
+  })
 
-    list.forEach((item)=>{
-      leftUl.appendChild(item)
-    })
+  list.forEach((item)=>{
+    leftUl.appendChild(item)
+  })
 
-    navbarLeft.appendChild(leftUl)
-  }
+  navbarLeft.appendChild(leftUl)
+}
 
   function navRightItems(){
 
