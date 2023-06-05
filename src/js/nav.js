@@ -1,4 +1,6 @@
 
+const htmlElement = document.querySelector('html');
+
 function navInit(){
   const nav = document.createElement('nav');
   nav.id = 'mainnav';
@@ -64,19 +66,31 @@ function navInit(){
   function navRightItems(){
 
     const theme = document.createElement("li");
-    const themeBtn = document.createElement("button");
+    const themeBtnLight = document.createElement("button");
+    const themeBtnDark = document.createElement("button");
+
     theme.className = 'nav-item theme'
-    themeBtn.classList.add('nav-icon')
-    themeBtn.style.backgroundImage = "url('https://myceoplus.com/images/theme_dark.png')"
-    theme.appendChild(themeBtn)
+
+    themeBtnLight.classList.add('nav-icon')
+    themeBtnDark.classList.add('nav-icon')
+
+
+    themeBtnLight.style.backgroundImage = "url('https://myceoplus.com/images/theme_light.png')"
+    themeBtnDark.style.backgroundImage = "url('https://myceoplus.com/images/theme_dark.png')"
+
+
+    theme.appendChild(themeBtnLight)
+    theme.appendChild(themeBtnDark)
 
     navbarRight.appendChild(theme)
+
     const search = document.createElement("li");
     const searchDiv = document.createElement('div');
     const searchA = document.createElement("a");
+
     search.className = 'nav-item search'
     searchA.className = 'nav-link nav-icon search'
-    searchA.style.backgroundImage = "url('https://myceoplus.com/images/search_dark.png')";
+    searchA.style.backgroundImage = htmlElement.classList.value === 'light' ?  "url('https://myceoplus.com/images/search_light.png')" : "url('https://myceoplus.com/images/search_dark.png')";
     
     searchDiv.appendChild(searchA)
     search.append(searchDiv)
@@ -92,7 +106,25 @@ function navInit(){
     userA.appendChild(userI)
     user.append(userA)
 
+    function themeBtnHandler(){
+      if(htmlElement.classList.value === 'light'){
+        htmlElement.className = 'dark'
+        themeBtnLight.style.display = 'none';
+        themeBtnDark.style.display = 'block';
+        searchA.style.backgroundImage = "url('https://myceoplus.com/images/search_dark.png')";
 
+      }else if(htmlElement.classList.value === 'dark'){
+        htmlElement.className = 'light'
+        themeBtnDark.style.display = 'none';
+        themeBtnLight.style.display = 'block';
+        searchA.style.backgroundImage = "url('https://myceoplus.com/images/search_light.png')";
+      }else{
+        return;
+      }
+    }
+
+    themeBtnLight.addEventListener('click',()=> themeBtnHandler())
+    themeBtnDark.addEventListener('click',()=> themeBtnHandler())
     navbarRight.appendChild(user)
   }
   logoSet();

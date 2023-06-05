@@ -1,4 +1,6 @@
 #mainnav {
+  position: sticky;
+  top: 0;
   display:flex;
   width: 100%;
   font-family: inherit;
@@ -18,6 +20,7 @@
   align-items: center;
   margin-right: 2.3vw;
   width: 100px;
+  cursor: pointer;
 }
 
 #mainnav .navbar-left {
@@ -65,10 +68,13 @@
   width: 40px;
   height: 40px;
   background-color: transparent;
-  
+  cursor: pointer;
+}
+#mainnav .navbar-right li a{
+  text-align: center;
 }
 
-#mainnav .navbar-right li :first-child{
+#mainnav .navbar-right li button{
   cursor: pointer;
 }
 
@@ -84,10 +90,6 @@
   background-color: transparent;
   margin: 0;
   border: 0;
-}
-
-#mainnav .navbar-right .nav-item.search{
-  margin-right: .5rem;
 }
 
 #mainnav .navbar-right .nav-icon{
