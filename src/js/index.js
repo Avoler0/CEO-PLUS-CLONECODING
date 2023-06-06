@@ -70,13 +70,65 @@ function ceoCard(name,category){
 
   return card;
 }
+
 function mainRightCreate(){
   const mainRight = document.createElement('div');
   mainRight.className = 'main-content main-right'
   const mainRightTitle = document.createElement('h2');
   mainRightTitle.innerHTML = 'MAGAZINE';
+  
+  const mainRightContainer = document.createElement('div');
+  mainRightContainer.className = 'right-container'
+
+  const mainRightContent = document.createElement('ul');
+  mainRightContainer.className = 'right-content'
+  mainRightContainer.appendChild(mainRightContent)
 
   mainRight.appendChild(mainRightTitle);
+  mainRightContainer.appendChild(mainRightContent);
+  mainRight.appendChild(mainRightContainer);
+
+  function magazineCard(){
+    const magazine = document.createElement('li');
+    magazine.className = 'magazine-card'
+
+    const magazineWrap = document.createElement('a');
+    magazineWrap.style.backgroundImage = "url('https://myceoplus.com/uploads/1684397357.jpg')";
+
+    const topImg = document.createElement('div');
+    topImg.className = 'card-top-img';
+    const img = document.createElement('img');
+    img.src = 'https://myceoplus.com/images/ceo_story_title.svg'
+    topImg.appendChild(img);
+
+    const content = document.createElement('div');
+    content.className = 'card-content';
+
+    const ceoComent = document.createElement('div');
+    const h2 = document.createElement('h4');
+    ceoComent.className = 'card-ceo-coment';
+    h2.innerHTML = 'Symbol of Love';
+    ceoComent.appendChild(h2)
+
+    const bottomImg = document.createElement('div');
+    bottomImg.className = 'card-bottom-img';
+    const bacode = document.createElement('img');
+    bacode.src = 'https://myceoplus.com/images/ceo_story_bacode.svg'
+    bottomImg.appendChild(bacode);
+
+    content.appendChild(ceoComent)
+    content.appendChild(bottomImg)
+    
+    magazine.appendChild(magazineWrap);
+    magazineWrap.appendChild(topImg)
+    magazineWrap.appendChild(content)
+    
+    
+
+    return magazine;
+  }
+
+  mainRightContent.appendChild(magazineCard());
 
   return mainRight;
 }
