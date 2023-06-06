@@ -2,9 +2,7 @@
 
 #main{
   @media (min-width: 1140px) {
-    width: 95%;
     margin: 0 auto;
-    margin-top: 20px
   }
 }
 
@@ -22,9 +20,76 @@
 }
 
 #main .main-content.main-left{
-  width: 40%;
+  width: calc(50% - 15px);
+  height: auto;
+}
+
+#main .main-content.main-left div ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#main .main-content.main-left div .ceo-reco-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(16.666666% - 17.5px);
+  margin: 30px 15px 0 0;
+  padding: 30px 15px;
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+html.dark .ceo-reco-card{
+  border: 1px solid #333333 !important;
+  background-color: #222222;
+}
+#main .main-content.main-left ul .ceo-reco-card :first-child {
+  color: black;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+}
+#main .main-content.main-left ul .ceo-reco-card .card-profile-icon{
+  width: 80px;
+  height: 80px;
+  background-image: url(../../image/unknown.png);
+  background-size: cover;
+  border-radius: 50%;
+}
+
+
+#main .main-content.main-left div .ceo-reco-card div p {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  padding-top: 10px;
+  line-height: 100%;
+}
+html.dark .card-ceo-name{
+  color: #fff;
+}
+
+#main .main-content.main-left div .ceo-reco-card div .card-ceo-category {
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#main .main-content.main-left div .ceo-reco-card div .card-ceo-folow {
+  background-color: #eabb4c;
+  border: 0;
+  font-size: 14px;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 7px 14px;
+  color: #fff;
 }
 
 #main .main-content.main-right {
-  width: 60%;
+  width: calc(50% - 15px);
+  height: 100%;
+  margin-left: 30px;
 }

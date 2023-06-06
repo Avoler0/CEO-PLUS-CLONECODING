@@ -3,6 +3,8 @@ html.light body{
   color: #000;
 }
 
+
+
 html.dark body{
   background-color: #000;
   color: #fff;
@@ -14,23 +16,20 @@ body{
   color: #fff;
   font-family: 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 돋움, Dotum, sans-serif;
   font-size: 0px;
-  /*사용자 OS 기준 다크모드 , 라이트모드 감지*/
-  /* @media (prefers-color-scheme: dark) { 
-    background-color: #000;
-    color: #fff;
-  }
-  @media (prefers-color-scheme: light) {
-    background-color: #fff;
-    color: #000;
-  } */
 }
 
-
+#app {
+  padding-top: 50px;
+  padding-right: 45px;
+  padding-left: 45px;
+}
 
 *,::after,::before {
   box-sizing: border-box;
 }
-
+h1,h2,h3,h4{
+  margin: 0;
+}
 ul, li{
   list-style: none;
   margin: 0;

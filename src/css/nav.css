@@ -4,8 +4,16 @@
   display:flex;
   width: 100%;
   font-family: inherit;
+  z-index: 1000;
 }
 
+#mainnav.nav-dark{
+  background-color: black;
+}
+
+#mainnav.nav-light {
+  background-color: #fff;
+}
 #mainnav .navbar{
   display:flex;
   justify-content: space-between;

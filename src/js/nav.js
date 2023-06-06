@@ -4,7 +4,7 @@ const htmlElement = document.querySelector('html');
 function navInit(){
   const nav = document.createElement('nav');
   nav.id = 'mainnav';
-
+  nav.className = htmlElement.classList.value === 'light' ? 'nav-light' : 'nav-dark';
   const navbar = document.createElement('div');
   navbar.className = 'navbar'
   const navbarLeft = document.createElement('div');
@@ -23,8 +23,7 @@ function navInit(){
 
     const logoImage = document.createElement("img");
     logoImage.className = 'logo-image';
-    logoImage.src = 'https://myceoplus.com/images/ceo_plus_logo.png';
-
+    logoImage.src = htmlElement.classList.value === 'light' ? 'https://myceoplus.com/images/ceo_plus_logo-light.png' : 'https://myceoplus.com/images/ceo_plus_logo.png';
     logo.appendChild(logoImage);
 
     navbarLeft.appendChild(logo);
@@ -107,17 +106,21 @@ function navInit(){
     user.append(userA)
 
     function themeBtnHandler(){
+      const logo = document.querySelector('.navbar-logo .logo-image')
       if(htmlElement.classList.value === 'light'){
         htmlElement.className = 'dark'
+        nav.className = 'nav-dark'
         themeBtnLight.style.display = 'none';
         themeBtnDark.style.display = 'block';
         searchA.style.backgroundImage = "url('https://myceoplus.com/images/search_dark.png')";
-
+        logo.src = 'https://myceoplus.com/images/ceo_plus_logo.png';
       }else if(htmlElement.classList.value === 'dark'){
         htmlElement.className = 'light'
+        nav.className = 'nav-light'
         themeBtnDark.style.display = 'none';
         themeBtnLight.style.display = 'block';
         searchA.style.backgroundImage = "url('https://myceoplus.com/images/search_light.png')";
+        logo.src = 'https://myceoplus.com/images/ceo_plus_logo-light.png';
       }else{
         return;
       }
@@ -133,10 +136,5 @@ function navInit(){
 
   return nav;
 }
-
-
-
-
-
 
 document.body.appendChild(navInit())
