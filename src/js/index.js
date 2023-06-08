@@ -5,6 +5,9 @@ main.id = 'main'
 const mainWrap = document.createElement('div');
 mainWrap.className = 'main-wrap'
 
+const mainTop = document.createElement('div');
+mainTop.className = 'main-top'
+
 function mainLeftCreate(){
   const mainLeft = document.createElement('div');
   mainLeft.className = 'main-content main-left'
@@ -129,15 +132,188 @@ function mainRightCreate(){
   }
 
   mainRightContent.appendChild(magazineCard());
-
+  mainRightContent.appendChild(magazineCard())
+  mainRightContent.appendChild(magazineCard())
+  mainRightContent.appendChild(magazineCard())
   return mainRight;
 }
 
+function mainBottomCreate(){
+  const mainBottom = document.createElement('div');
+  mainBottom.className = 'main-content main-bottom';
+  const mainBottomTitle = document.createElement('h2');
+  mainBottomTitle.innerHTML = '최신글';
+  const mainBottomContent = document.createElement('div');
+  mainBottomContent.className = 'bottom-container'
+  const grid = [0,1,2,3,4].map(()=>{
+    const div = document.createElement('div');
+    div.className = 'post-grid';
+    return div;
+  })
 
-mainWrap.appendChild(mainLeftCreate())
-mainWrap.appendChild(mainRightCreate())
+  function postLargeCard(){
+    const postWrap = document.createElement('div');
+    postWrap.className = 'post-wrap';
 
-main.appendChild(mainWrap)
+    const postTop = document.createElement('div');
+    postTop.className = 'post-top'
+
+    const write = document.createElement('div');
+    write.className = 'card-write-title';
+    const category = document.createElement('div');
+    category.className = 'card-category-title';
+
+    write.innerHTML = '내소식 쓰기';
+    category.innerHTML = '언론 출판 미디어';
+    postTop.appendChild(write);
+    postTop.appendChild(category);
+
+    const postCard = document.createElement('div');
+    postCard.className = 'post-card';
+
+    const cardImg = document.createElement('div');
+    cardImg.className = 'card-img-wrap';
+    const img = document.createElement('img');
+    img.className = 'card-img';
+    img.src = 'https://myceoplus.com/uploads/1685924264.jpg';
+    cardImg.appendChild(img);
+    const cardWrap = document.createElement('div');
+    cardWrap.className = 'card-wrap'
+    const cardHead = document.createElement('div');
+    cardHead.className = 'card-head';
+    const cardContent = document.createElement('div');
+    cardContent.className = 'card-content';
+    const contentHead = document.createElement('h4');
+    contentHead.innerHTML = '펄스 서베이 진행중'
+    cardContent.appendChild(contentHead)
+    const contentText = document.createElement('p')
+    contentText.innerText = '현재 진행중인 서베이 투표바랍니다.회사 성장 시키기 의한 노력~~~'
+    cardContent.appendChild(contentText)
+    const cardFoot = document.createElement('div');
+    cardFoot.className = 'card-foot';
+    const postLike = document.createElement('div');
+    postLike.className = 'post-like';
+    postLike.innerHTML = '1';
+    const postView = document.createElement('div');
+    postView.className = 'post-view';
+    postView.innerHTML = '45'
+    const postComment = document.createElement('div');
+    postComment.className = 'post-comment';
+    postComment.innerHTML = '1'
+
+    cardFoot.appendChild(postLike)
+    cardFoot.appendChild(postView)
+    cardFoot.appendChild(postComment)
+
+    cardWrap.appendChild(cardHead)
+    cardWrap.appendChild(cardContent)
+    cardWrap.appendChild(cardFoot)
+
+    postCard.appendChild(cardImg)
+    postCard.appendChild(cardWrap)
+    
+    postWrap.appendChild(postTop);
+    postWrap.appendChild(postCard);
+    
+    return postWrap;
+  }
+
+  function postSmallCard(){
+    const postWrap = document.createElement('div');
+    postWrap.className = 'post-wrap small';
+
+    const postTop = document.createElement('div');
+    postTop.className = 'post-top'
+
+    const write = document.createElement('div');
+    write.className = 'card-write-title';
+    const category = document.createElement('div');
+    category.className = 'card-category-title';
+
+    write.innerHTML = '내소식 쓰기';
+    category.innerHTML = '언론 출판 미디어';
+    postTop.appendChild(write);
+    postTop.appendChild(category);
+
+    const postCard = document.createElement('div');
+    postCard.className = 'post-card';
+
+    const cardImg = document.createElement('div');
+    cardImg.className = 'card-img-wrap';
+    const img = document.createElement('img');
+    img.className = 'card-img';
+    img.src = 'https://myceoplus.com/uploads/background/sunset.png';
+    cardImg.appendChild(img);
+    const cardWrap = document.createElement('div');
+    cardWrap.className = 'card-wrap'
+    const cardHead = document.createElement('div');
+    cardHead.className = 'card-head';
+    const cardContent = document.createElement('div');
+    cardContent.className = 'card-content';
+    const contentHead = document.createElement('h4');
+    contentHead.innerHTML = '펄스 서베이 진행중'
+    cardContent.appendChild(contentHead)
+    const contentText = document.createElement('p')
+    contentText.innerText = '현재 진행중인 서베이 투표바랍니다.회사 성장 시키기 의한 노력~~~'
+    cardContent.appendChild(contentText)
+    const cardFoot = document.createElement('div');
+    cardFoot.className = 'card-foot';
+    const postLike = document.createElement('div');
+    postLike.className = 'post-like';
+    postLike.innerHTML = '1';
+    const postView = document.createElement('div');
+    postView.className = 'post-view';
+    postView.innerHTML = '45'
+    const postComment = document.createElement('div');
+    postComment.className = 'post-comment';
+    postComment.innerHTML = '1'
+
+    cardFoot.appendChild(postLike)
+    cardFoot.appendChild(postView)
+    cardFoot.appendChild(postComment)
+
+    cardWrap.appendChild(cardHead)
+    cardWrap.appendChild(cardContent)
+    cardWrap.appendChild(cardFoot)
+
+    postCard.appendChild(cardImg)
+    postCard.appendChild(cardWrap)
+    
+    postWrap.appendChild(postTop);
+    postWrap.appendChild(postCard);
+    
+    return postWrap;
+  }
+
+  grid.forEach((div,index)=>{
+    let bool = 0;
+    bool = index % 2;
+    [0,1,2,3,4].forEach(()=>{
+      if(bool === 0){
+        div.appendChild(postLargeCard())
+        bool = 1;
+      }else{
+        div.appendChild(postSmallCard())
+        bool = 0;
+      }
+    })
+
+    mainBottomContent.appendChild(div);
+  })
+
+  
+
+  console.log(grid)
+  mainBottom.appendChild(mainBottomTitle);
+  mainBottom.appendChild(mainBottomContent);
+  return mainBottom;
+}
+
+mainTop.appendChild(mainLeftCreate());
+mainTop.appendChild(mainRightCreate());
+mainWrap.appendChild(mainTop);
+mainWrap.appendChild(mainBottomCreate());
+main.appendChild(mainWrap);
 
 const app = document.querySelector('#app')
 
