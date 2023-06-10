@@ -8,6 +8,27 @@ mainWrap.className = 'main-wrap'
 const mainTop = document.createElement('div');
 mainTop.className = 'main-top'
 
+const mbIcon = document.createElement('div');
+mbIcon.className = 'mobile-icon-box';
+const mbIconUl = document.createElement('ul');
+
+[0,1,2,3].forEach((num)=>{
+  const li = document.createElement('li');
+  li.className = `${num}-item`;
+  const a = document.createElement('a');
+  const div = document.createElement('div');
+  const span1 = document.createElement('span');
+  const span2 = document.createElement('span');
+
+  div.appendChild(span1)
+  div.appendChild(span2)
+  a.appendChild(div)
+  li.appendChild(a)
+  mbIconUl.appendChild(li);
+})
+
+mbIcon.appendChild(mbIconUl);
+
 function mainLeftCreate(){
   const mainLeft = document.createElement('div');
   mainLeft.className = 'main-content main-left'
@@ -144,10 +165,13 @@ function mainBottomCreate(){
   const mainBottomTitle = document.createElement('h2');
   mainBottomTitle.innerHTML = '최신글';
   const mainBottomContent = document.createElement('div');
-  mainBottomContent.className = 'bottom-container'
+  mainBottomContent.className = 'bottom-container';
+
+  const mainBottomGrid = document.createElement('div');
+  mainBottomGrid.className = 'post-grid';
   const grid = [0,1,2,3,4].map(()=>{
     const div = document.createElement('div');
-    div.className = 'post-grid';
+    div.className = 'post-columns';
     return div;
   })
 
@@ -297,13 +321,14 @@ function mainBottomCreate(){
         bool = 0;
       }
     })
-
-    mainBottomContent.appendChild(div);
+    
+    mainBottomGrid.appendChild(div);
   })
 
   
 
   console.log(grid)
+  mainBottomContent.appendChild(mainBottomGrid)
   mainBottom.appendChild(mainBottomTitle);
   mainBottom.appendChild(mainBottomContent);
   return mainBottom;
@@ -312,6 +337,7 @@ function mainBottomCreate(){
 mainTop.appendChild(mainLeftCreate());
 mainTop.appendChild(mainRightCreate());
 mainWrap.appendChild(mainTop);
+mainWrap.appendChild(mbIcon);
 mainWrap.appendChild(mainBottomCreate());
 main.appendChild(mainWrap);
 
